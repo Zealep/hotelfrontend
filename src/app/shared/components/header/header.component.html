@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div>
+    <a [routerLink]="'/pages/recepcion'">
+      <img src="./assets/images/logo-hotel.jpg" width="150" height="80"/>
+    </a>
+  </div>
+    <span class="menu-spacer"></span>
+
+      <div class="buttons">
+        <button mat-button [routerLink]="'/pages/recepcion'">
+         Recepcion
+        </button>
+      </div>
+    <div>
+      <button mat-button (click)="cerrarSesion()">
+        <mat-icon>logout</mat-icon> Cerrar sesión
+      </button>
+    </div>
+    <span class="logo-spacer"></span>
+    <div>
+      <img src="./assets/images/logocliente.png" width="150" height="80"/>
+    </div>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
