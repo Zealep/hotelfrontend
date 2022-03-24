@@ -11,16 +11,29 @@
         <button mat-button [routerLink]="'/pages/recepcion'">
          Recepcion
         </button>
+        <button mat-button [routerLink]="'/pages/reserva'">
+          Reserva
+         </button>
+
+         <button mat-button [matMenuTriggerFor]="menuAdministracion">
+          <mat-icon>build</mat-icon>Administracion
+        </button>
+
+        <mat-menu #menuAdministracion="matMenu">
+          <button mat-menu-item [routerLink]="'/pages/egreso'">Egresos</button>
+          <button mat-menu-item [routerLink]="'/pages/categoria'">Categorias</button>
+          <button mat-menu-item [routerLink]="'/pages/nivel'">Nivel</button>
+          <button mat-menu-item [routerLink]="'/pages/tipodocumento'">Tipo Documento</button>
+          <button mat-menu-item [routerLink]="'/pages/producto'">Producto</button>
+          <button mat-menu-item [routerLink]="'/pages/habitacion'">Habitacion</button>
+        </mat-menu>
       </div>
     <div>
-      <button mat-button (click)="cerrarSesion()">
-        <mat-icon>logout</mat-icon> Cerrar sesión
-      </button>
+
     </div>
     <span class="logo-spacer"></span>
-    <div>
-      <img src="./assets/images/logocliente.png" width="150" height="80"/>
-    </div>
-
+    <button mat-button (click)="cerrarSesion()">
+      <mat-icon>logout</mat-icon> Cerrar sesión
+    </button>
     </mat-toolbar-row>
   </mat-toolbar>

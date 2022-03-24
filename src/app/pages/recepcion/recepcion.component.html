@@ -1,1 +1,26 @@
-<p>recepcion works!</p>
+<mat-card>
+  <mat-card-title>
+
+    <mat-toolbar>
+      <mat-icon>king_bed</mat-icon>
+      <span>&nbsp;&nbsp;CHECK IN</span>
+
+      <button mat-button *ngFor="let n of niveles" (click)="buscarPorNivel(n.idNivel!)">
+        {{n.nombre}}
+       </button>
+    </mat-toolbar>
+  </mat-card-title>
+
+  <mat-card-content>
+    <div class="content">
+      <mat-card *ngFor="let h of habitaciones" class="habitacion-card">
+        <mat-card-title-group>
+        <mat-card-title>{{h.nombre}}</mat-card-title>
+        <mat-card-subtitle>{{h.categoria?.nombre}}</mat-card-subtitle>
+          <img mat-card-sm-image src="./assets/images/bed.png" >
+        </mat-card-title-group>
+      </mat-card>
+    </div>
+  </mat-card-content>
+</mat-card>
+

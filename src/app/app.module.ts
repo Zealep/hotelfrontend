@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -11,8 +11,20 @@ import { BasicAuthHtppInterceptorService } from './services/basic-auth-intercept
 import { AppRoutingModule } from './app-routing.module';
 import { NgxFullCalendarModule } from 'ngx-fullcalendar';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
+import interactionPlugin from '@fullcalendar/interaction';
+import { registerLocaleData } from '@angular/common';
+import es from '@angular/common/locales/es';
 
-
+registerLocaleData(es);
+FullCalendarModule.registerPlugins([
+  dayGridPlugin,
+  timeGridPlugin,
+  listPlugin,
+  interactionPlugin
+])
 
 
 @NgModule({
@@ -27,10 +39,11 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     SharedModule,
     MaterialModule,
     HttpClientModule,
-    NgxFullCalendarModule
+    FullCalendarModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthHtppInterceptorService, multi: true },
+     { provide: LOCALE_ID, useValue: "es-ES"},
+      {provide: HTTP_INTERCEPTORS, useClass: BasicAuthHtppInterceptorService, multi: true },
   ],
   bootstrap: [AppComponent]
 })

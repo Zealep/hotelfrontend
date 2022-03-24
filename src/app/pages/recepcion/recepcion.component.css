@@ -1,0 +1,13 @@
+.habitacion-card {
+  width: 250px;
+  box-sizing: border-box;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
